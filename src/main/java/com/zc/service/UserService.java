@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * @作者： zc
  * @时间： 2021/1/28 18:17
@@ -19,6 +21,10 @@ public class UserService {
 
     public User queryById(Integer id){
         return userMapper.selectByPrimaryKey(id);
+    }
+
+    public List<User> selAll(){
+        return userMapper.selectAll();
     }
 
     // 事务

@@ -1,11 +1,10 @@
 package com.zc.pojo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
 
@@ -17,6 +16,8 @@ import java.sql.Timestamp;
  */
 @Table(name = "user_info")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,8 +25,8 @@ public class User {
     private String username;
     private String password;
     private String realname;
-    private Date birthday;
+    private String birthday;
     private Integer gender;
-    private Timestamp createtime;
-    private Timestamp updatetime;
+    private String createtime;
+    private String updatetime;
 }
