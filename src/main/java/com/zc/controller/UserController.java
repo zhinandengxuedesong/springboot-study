@@ -31,18 +31,22 @@ public class UserController {
 
     @GetMapping("/selAll")
     public List<User> selAll(){
-        // 插入一条数据
-//        this.userService.insertUser(new User(
-//                3,
-//                "wanger",
-//                "2sx321",
-//                "王二",
-//                Date.valueOf("2020-12-13"),
-//                0,
-//                Timestamp.valueOf("2020-12-13 12:04:17"),
-//                Timestamp.valueOf("2020-12-13 13:04:17")
-//        ));
         List<User> users = this.userService.selAll();
         return users;
+    }
+
+    @GetMapping("/insert")
+    public void insert(){
+        // 插入一条数据
+        this.userService.insertUser(new User(
+                4,
+                "mawu",
+                "dsgds21",
+                "麻五",
+                "2020-11-17",
+                1,
+                "2020-11-17 11:04:17",
+                "2020-11-17 11:14:12"
+        ));
     }
 }
