@@ -2,6 +2,8 @@ package com.zc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 import tk.mybatis.spring.annotation.MapperScan;
 
 /**
@@ -15,5 +17,11 @@ import tk.mybatis.spring.annotation.MapperScan;
 public class BootStudyApplicaton {
     public static void main(String[] args) {
         SpringApplication.run(BootStudyApplicaton.class, args);
+    }
+
+    @Bean
+    public RestTemplate restTemplate(){
+        // 默认的 RestTemplate，底层是走JDK的URLConnection方式。
+        return new RestTemplate();
     }
 }
